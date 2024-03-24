@@ -20,7 +20,7 @@
   To use this program, run it with a command-line argument specifying the number of
   strings to print randomly from the input sequence. For example:
 
-  java Permutation 3 < input.txt
+  java-algs4 Permutation 3 < input.txt
 
   Note: Permutation.java provides a flexible and efficient way to randomly select
   a subset of strings from an input sequence, with linear running time and minimal
