@@ -39,6 +39,7 @@ public class PermutationVisualizer {
   private static final double PADDING = 0.01;
   private static final int DELAY = 250;
   private static final int WAIT = 1500;
+  private static int END = 0;
 
   public static void main(String[] args) {
     if (args.length != 1) {
@@ -66,6 +67,7 @@ public class PermutationVisualizer {
     StdDraw.pause(WAIT);
     System.out.println("Dequeue started.");
     for (int i = 0; i < k; i++) {
+      if (i == k - 1) END = 1;
       String dequeuedItem = randomizedQueue.dequeue();
       itemsList.remove(dequeuedItem);
       selectedList.add(dequeuedItem);
@@ -110,7 +112,8 @@ public class PermutationVisualizer {
       String item, List<String> itemsList, List<String> selectedList) {
     StdDraw.clear();
 
-    StdDraw.text(0.5, 0.95, "Dequeue: " + item);
+    if (END != 1) StdDraw.text(0.5, 0.95, "Dequeue: " + item);
+    else StdDraw.text(0.5, 0.95, "Visualization Completed!");
 
     double totalWidth = itemsList.size() * (SQUARE_SIZE + PADDING);
     double startX = (1 - totalWidth) / 2;
