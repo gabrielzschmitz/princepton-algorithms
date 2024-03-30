@@ -1,3 +1,52 @@
+/*
+  Program Description:
+  --------------------
+  SeamCarver.java implements a Seam Carving algorithm for resizing images.
+  It allows for the removal of seams (connected pixels) with low energy,
+  resulting in the resizing of the image while preserving important
+  features.
+
+  The SeamCarver class provides methods to find and remove both horizontal
+  and vertical seams with the lowest energy, thereby adjusting the image's
+  dimensions accordingly.
+
+  Usage Instructions:
+  -------------------
+  1. Compile the program using the command: javac-algs4 SeamCarver.java
+  2. Execute the compiled program using the command:
+     java-algs4 SeamCarver <image_file> <seams_to_remove>
+     - Replace <image_file> with the path to the image file.
+     - Replace <seams_to_remove> with the number of seams to remove for
+       resizing.
+
+  Implementation Details:
+  -----------------------
+  - The SeamCarver constructor initializes the SeamCarver object with a
+    Picture object representing the input image.
+  - The energy(int x, int y) method calculates the energy of a pixel at
+    position (x, y) in the image based on its color and the colors of its
+    neighboring pixels.
+  - The findHorizontalSeam() and findVerticalSeam() methods find the seam
+    with the lowest energy in the horizontal and vertical directions,
+    respectively.
+  - The removeHorizontalSeam(int[] seam) and removeVerticalSeam(int[] seam)
+    methods remove the specified horizontal or vertical seam from the image.
+  - The main method demonstrates the usage of the SeamCarver class by
+    resizing the input image by removing a specified number of vertical
+    seams.
+
+  Dependencies:
+  -------------
+  - The program depends on the Picture class for image manipulation.
+
+  Example:
+  --------
+  Upon execution, the SeamCarver program reads an image file and displays
+  it. It then calculates and prints the energy of a pixel at a specific
+  position in the image, followed by the dimensions of the original image.
+  After removing the specified number of vertical seams, it displays the
+  resized image and prints its new dimensions.
+*/
 import edu.princeton.cs.algs4.Picture;
 import java.awt.Color;
 
